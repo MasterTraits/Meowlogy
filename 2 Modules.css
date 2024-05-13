@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --background-color: white;
+  --text-color: black;
+  --secondary-text-color: blue;
+  --pink: #DEA69F;
+  --beige: #F6F4DD;
+  --Brown-orange: #C9883B;
+  --Brown: #7E390B;
+}
+
+* {
+  font-family: 'Poppins', sans serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  text-align: center;
+  scroll-snap-stop: always;
+}
+
+.background {
+  position: absolute;
+  z-index: -6;
+  height: 120vh;
+  width: auto;
+  background-size: cover;
+  top: 0;
+  left: 0;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+header a img {
+  height: 100px;
+  width: 300px;
+  border: 1px solid black
+}
+
+header nav {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px 18px;
+  border-radius: 50px;
+}
+
+header nav a:hover {
+  background-color: var(--pink)
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.Logo {
+  margin: 30px 0px 40px 0px;
+}
+
+/* Navigate: 3 Cat categories */
+
+aside {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  column-gap: 25px;
+  padding-bottom: 40px;
+  border-bottom: 4px solid gray;
+  align-content: center;
+}
+
+aside a {
+  border: 3px solid gray;
+  text-align: start;
+  <div id="slide-image-3"></div>padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 2px 4px rgb(0, 0, 0);
+  font-size: x-large;
+  font-weight: 500;
+
+  transition: transform 2s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(50%);
+}
+
+aside a:hover {
+  filter: brightness(100%);
+  transform: scale(1.1);
+}
+
+.Cute {
+  background-image: url(/images/FelisCatus.jpg);
+  background-position: start;
+  background-size: cover;
+  filter: brightness(80%)
+}
+
+.Fast {
+  background-image: url(/images/Acinonyx.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: brightness(80%)
+}
+
+.Scary {
+  background-image: url(/images/Panthera.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: brightness(80%)
+}
+
+.Cute:hover,
+.Fast:hover,
+.Scary:hover {
+  display: block;
+  height: 200px;
+  filter: brightness(80%);
+}
+
+
+/* Search Bar */
+.Searchbar {
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+  background-color: var(--pink);
+  display: flex;
+  gap: 10px;
+}
+
+.Searchbar input {
+  font-size: 1.3em;
+  padding: 10px 10px 10px 20px;
+  border-radius: 30px;
+  border: 2px solid var(--Brown);
+}
+
+.Searchbar div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid var(--Brown);
+  cursor: pointer;
+}
+
+
+
+/* Section: Cat types */
+
+section {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  gap: 30px 20px;
+  margin-bottom: 50px;
+  /* width: 65%;
+  height: 55%; */
+}
+
+section a {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(240, 240, 240);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 1s ease;
+}
+
+section a:hover {
+  background-color: rgb(240, 240, 240);
+  border: 5px solid pink;
+  scale: 1.1;
+  transform: skew(-0.02turn, 7deg);
+  z-index: 1;
+}
+
+section a img {
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section a:hover img {
+  scale: 1.1;
+}
+
+section a h3 {
+  font-size: 1.2em;
+  text-align: center;
+  text-wrap: wrap;
+  padding: 3px 0px;
+  margin: 10px 0px 5px 0px;
+  border-radius: 50px;
+  background-color: var(--background-color);
+}
+
+section a p {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+
+
+
+
+/* Phones */
+@media screen and (min-width: 390px) {
+  aside {
+    grid-template-columns: repeat(1, 300px);
+    grid-template-rows: repeat(3, 130px);
+    row-gap: 5px;
+  }
+
+  section {
+    grid-template-columns: repeat(1, 300px);
+  }
+}
+
+/* Phones and Tablets */
+@media screen and (min-width: 640px) {
+  aside {
+    grid-template-columns: repeat(2, 290px);
+    grid-template-rows: repeat(2, 130px);
+  }
+
+  section {
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+/* Tablets and Square Monitors */
+@media screen and (min-width: 1024px) {
+  aside {
+    grid-template-columns: repeat(3, 290px);
+    grid-template-rows: 130px 0px;
+  }
+
+  section {
+    grid-template-columns: repeat(3, 280px);
+  }
+}
+
+/* Laptops and Phone Landscapes */
+@media screen and (min-width: 1280px) {
+  aside {
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(1, 200px);
+  }
+
+  section {
+    grid-template-columns: repeat(4, 300px);
+  }
+}
+
+/* Common Big Screens */
+@media screen and (min-width: 1560px) {
+  section {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
