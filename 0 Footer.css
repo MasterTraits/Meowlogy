@@ -89,6 +89,10 @@ footer button[type="submit"] {
     width: 50%;
 }
 
+footer button[type="submit"]:hover {
+    background-color: #DFBF98;
+}
+
 footer .input-contain {
     display: flex;
     margin: 0 auto;

@@ -415,6 +415,7 @@ nav a {
   justify-content: center;
   align-items: center;
   padding: 10px 100% 10px 30px;
+  cursor: pointer;
 }
 
 .sidebar-item:hover a {
