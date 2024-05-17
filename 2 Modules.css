@@ -98,14 +98,14 @@ aside a:hover {
 }
 
 .Cute {
-  background-image: url(/images/FelisCatus.jpg);
+  background-image: url(./images/FelisCatus.jpg);
   background-position: start;
   background-size: cover;
   filter: brightness(80%)
 }
 
 .Fast {
-  background-image: url(/images/Acinonyx.jpg);
+  background-image: url(./images/Acinonyx.jpg);
   background-position: center;
   background-size: cover;
   filter: brightness(80%);
@@ -113,7 +113,7 @@ aside a:hover {
 }
 
 .Scary {
-  background-image: url(/images/Panthera.jpg);
+  background-image: url(./images/Panthera.jpg);
   background-position: center;
   background-size: cover;
   filter: brightness(80%)
@@ -166,6 +166,7 @@ aside a:hover {
   border: 2px solid black;
   font-size: 1.5rem;
   text-align: center;
+  align-items: center;
 }
 
 .Searchbar input {
