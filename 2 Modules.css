@@ -152,6 +152,7 @@ aside a:hover {
   justify-content: flex-start;
   gap: 5px;
   align-items: center;
+  align-items: center;
 }
 
 .fa-magnifying-glass {
