@@ -1,64 +1,52 @@
 /* WHOLE BODY */
 section {
-    height: 92.5vh;
+    height: auto;
     background: url('bg.png');
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url('Resources/img/bg-front.png') lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url('Resources/img/bg-section.jpg') lightgray 50% / cover no-repeat;
     background-position: bottom;
-    padding-top: 150px;
+    padding: 100px 0;
 }
 
 /* CONTAINER */
 .contain {
-    margin: 0 10%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto 180px;
 }
 
-h1 {
+.contain h1 {
     text-align: center;
     padding: 10px 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 200;
 }
 
-.header {
-    width: 95%;
-}
-
-hr {
-    border: 1px solid #000000;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.row {
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    padding-top: 30px;
-    /* border: 2px solid blue;   */
+.line {
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
     border-radius: 1rem;
-    /* background: #D0C1AB; */
+    width: 100%;
+    margin: 0 auto 50px;
+}
+
+section .row {
+    display: grid;
+    grid-template-columns: repeat(4, 360px);
+    gap: 30px 20px;
+    /* height: auto; */
 }
 
 .column {
-    width: 20%;
-    height: 45%;
+    /* width: 20%; */
+    height: auto;
     border: 2px solid #000000;
     border-radius: 1rem;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     transition: 0.8s all;
-    box-shadow: 0px 1px 10px 0px #F5DEB3;
+    /* box-shadow: 0px 1px 10px 0px #F5DEB3; */
     background-color: #9A6F46;
     /* text-shadow: 1px 1px 1px #7a7a7a; */
 }
@@ -66,7 +54,7 @@ hr {
 
 
 .column:hover {
-    box-shadow: 0px 2px 30px 0px #dad0be;
+    /* box-shadow: 0px 2px 30px 0px #dad0be; */
     /* transform: perspective(2px); */
     /* box-shadow: 0px 10px 10px 0px #F5DEB3; */
 }
@@ -86,9 +74,9 @@ hr {
     border: 1px solid black;
 }
 
-h2 {
+.column h2 {
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     border-top: 2px solid #000000;
     /* border-radius: 2rem; */
@@ -102,22 +90,96 @@ h2 {
     transform: translateY(-3px);
 }
 
-@media(max-width: 800px) {}
+@media (max-width: 1500px) and (min-width: 768px) {
+    /* .row {
+        flex-wrap: wrap;
+        height: 55vh;
+        Adjust the height as desired
+    } */
 
-@media(max-width:500px) {
-    .contain {
+    /* .column {
+        width: 35%;
+        height: 100%;
+        margin-bottom: 2rem;
+    } */
+}
+
+@media (max-width: 767px) {
+    /* .contain {
         margin: 0 20%;
     }
-
 
     .row {
         flex-direction: column;
         flex-wrap: nowrap;
+        height: auto;
+        /* Reset the height */
+}
+
+
+/* .column {
+        width: 100%;
+        height: 45%;
+        Adjust the height as desired
+        margin-bottom: 2rem;
+    } 
+} */
+
+/* Phones */
+@media screen and (min-width: 390px) {
+    section .row {
+        grid-template-columns: repeat(1, 350px);
+        justify-content: center;
     }
 
     .column {
-        width: 100%;
-        height: 45%;
-        margin-bottom: 2rem;
+        /* height: auto; */
+        width: 350px;
+    }
+
+    .line {
+        width: 80%;
     }
 }
+
+/* Phones and Tablets */
+@media screen and (min-width: 640px) {
+    section .row {
+        grid-template-columns: repeat(2, 250px);
+        justify-content: center;
+    }
+
+    .column {
+        /* height: 18; */
+        width: 250px;
+    }
+
+    .line {
+        width: 50%;
+    }
+}
+
+/* Tablets and Square Monitors */
+@media screen and (min-width: 1560px) {
+    section .row {
+        grid-template-columns: repeat(4, 350px);
+        justify-content: center;
+    }
+
+    .column {
+        /* height: 25px; */
+        width: 350px;
+    }
+
+    .line {
+        width: 95%;
+    }
+}
+
+
+/* Common Big Screens */
+/* @media screen and (min-width: 1560px) {
+    section .row {
+        grid-template-columns: repeat(5);
+    }
+} */

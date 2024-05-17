@@ -1,6 +1,7 @@
 //---------NAVBAR---------
 // Get all dropdown effect links
 const dropdownEffects = document.querySelectorAll('.dropdown-effect');
+
 let activeDropdown = null;
 let clickCount = 0; // Initialize a click count variable
 let currentDropdownEffect = null; // Keep track of the current dropdown effect
@@ -50,7 +51,7 @@ function closeActiveDropdown() {
 }
 
 //--- Function to close the dropdown when clicking outside
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   const target = event.target;
   const isDropdownLink = target.classList.contains('dropdown-effect');
   const isInsideDropdown = activeDropdown && activeDropdown.contains(target);
@@ -133,6 +134,7 @@ document.addEventListener('click', (event) => {
   const isSidebar = sidebar.contains(target);
   const isMenuButtonContainer = target.closest('.menu-button-container');
 
+
   if (!isSidebar && !isMenuButtonContainer) {
     sidebar.classList.remove('show');
     sidebarDropdownShow1.classList.remove('show');
@@ -140,12 +142,54 @@ document.addEventListener('click', (event) => {
   }
 });
 
+//---------------------------- CLOSE SIDEBAR DROPDOWN ON SECOND CLICK
+// Get all sidebar item containers
+const sidebarItemContainers = document.querySelectorAll('.sidebar-item-container');
+// let clickCount = 0; // Initialize a click count variable
+let currentSidebarItem = null; // Keep track of the current sidebar item
+
+// Loop through each sidebar item container
+sidebarItemContainers.forEach((container) => {
+  const sidebarLink = container.querySelector('a');
+
+  // Add event listener for click event
+  sidebarLink.addEventListener('click', toggleSidebarDropdown);
+});
+
+// Function to toggle the sidebar dropdown
+function toggleSidebarDropdown(event) {
+  const sidebarItemContainer = event.currentTarget.parentElement;
+  const sidebarDropdownList = sidebarItemContainer.nextElementSibling;
+
+  // Check if a different sidebar item was clicked
+  if (currentSidebarItem !== sidebarItemContainer) {
+    clickCount = 0; // Reset the click count
+    currentSidebarItem = sidebarItemContainer; // Update the current sidebar item
+  }
+
+  clickCount++; // Increment the click count
+
+  if (clickCount === 1) {
+    // First click: Toggle the sidebar dropdown
+    if (sidebarDropdownList && sidebarDropdownList.classList.contains('sidebar-dropdown-list')) {
+      sidebarDropdownList.classList.toggle('show');
+    }
+    event.preventDefault(); // Prevent default link behavior
+  } else {
+    // Second click: Close the sidebar dropdown
+    if (sidebarDropdownList && sidebarDropdownList.classList.contains('sidebar-dropdown-list')) {
+      sidebarDropdownList.classList.remove('show');
+    }
+    clickCount = 0; // Reset the click count
+  }
+}
+
 // ------------------------------------BUTTON
 // Clicking proceed, moves to slide page
 const proceedButton = document.querySelector('.proceed');
 const slidePage = document.querySelector('.slide-page'); // Adjust selector if using a wrapper
 
-proceedButton.addEventListener('click', function() {
+proceedButton.addEventListener('click', function () {
   slidePage.scrollIntoView({
     behavior: 'smooth', // Enables smooth scrolling
     block: 'start' // Scrolls to the top of the element
@@ -210,7 +254,7 @@ function openTwitter() {
 function openInstagram() {
   window.location.href = "https://www.instagram.com";
 }
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector('.container');
 
   function fadeInContainer() {
@@ -225,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', fadeInContainer);
 });
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
   event.preventDefault();
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;

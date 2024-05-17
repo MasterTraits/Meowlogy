@@ -6,7 +6,9 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-
+body {
+  scroll-snap-stop: always;
+}
 
 
 /* .snap-container {

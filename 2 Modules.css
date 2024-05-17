@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
 :root {
-  --background-color: white;
-  --text-color: black;
   --secondary-text-color: blue;
   --pink: #DEA69F;
   --beige: #F6F4DD;
@@ -10,9 +6,6 @@
   --Brown: #7E390B;
 }
 
-* {
-  font-family: 'Poppins', sans serif;
-}
 
 html {
   scroll-behavior: smooth;
@@ -23,9 +16,14 @@ body {
   padding: 0px;
   box-sizing: border-box;
   overflow-x: hidden;
-  text-align: center;
+  /* text-align: center; */
   scroll-snap-stop: always;
 }
+
+/* ------------------------------ */
+/* main {
+  margin: 0 auto;
+} */
 
 .background {
   position: absolute;
@@ -53,34 +51,16 @@ header a img {
   border: 1px solid black
 }
 
-header nav {
-  flex-wrap: wrap;
-  display: flex;
-  gap: 10px;
-  font-size: 20px;
-}
-
-header nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 8px 18px;
-  border-radius: 50px;
-}
-
-header nav a:hover {
-  background-color: var(--pink)
-}
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 50px;
+  padding: 50px;
 }
 
-.Logo {
-  margin: 30px 0px 40px 0px;
-}
 
 /* Navigate: 3 Cat categories */
 
@@ -89,22 +69,24 @@ aside {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   column-gap: 25px;
-  padding-bottom: 40px;
-  border-bottom: 4px solid gray;
   align-content: center;
 }
 
+.line {
+  height: 10px;
+  width: 80%;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+
 aside a {
-  border: 3px solid gray;
+  border: 3px solid black;
   text-align: start;
-  <div id="slide-image-3"></div>padding: 5px 10px;
+  padding: 5px 10px;
   border-radius: 20px;
-  color: white;
-  text-decoration: none;
   text-shadow: 1px 2px 4px rgb(0, 0, 0);
   font-size: x-large;
-  font-weight: 500;
-
   transition: transform 2s, filter 0.5s ease-in-out;
   transform-origin: center center;
   filter: brightness(50%);
@@ -126,7 +108,8 @@ aside a:hover {
   background-image: url(/images/Acinonyx.jpg);
   background-position: center;
   background-size: cover;
-  filter: brightness(80%)
+  filter: brightness(80%);
+  /* border: none; */
 }
 
 .Scary {
@@ -136,37 +119,67 @@ aside a:hover {
   filter: brightness(80%)
 }
 
+.Cute,
+.Scary,
+.Fast {
+  filter: brightness(40%)
+}
+
 .Cute:hover,
 .Fast:hover,
 .Scary:hover {
   display: block;
   height: 200px;
   filter: brightness(80%);
+  border: black 4px solid;
+  color: white;
+  filter: brightness(100%);
 }
+
+.active-card {
+  filter: brightness(100%) !important;
+  border: black 4px solid !important;
+}
+
 
 
 /* Search Bar */
 .Searchbar {
-  padding: 10px 20px 10px 20px;
+  padding: 5px 5px 5px 5px;
   border-radius: 50px;
   background-color: var(--pink);
   display: flex;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 5px;
+  align-items: center;
+}
+
+.fa-magnifying-glass {
+  background-color: white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .Searchbar input {
   font-size: 1.3em;
   padding: 10px 10px 10px 20px;
   border-radius: 30px;
-  border: 2px solid var(--Brown);
+  border: 2px solid black;
 }
 
-.Searchbar div {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid var(--Brown);
+.Searchbar {
+  height: auto;
+  width: 435px;
+  /* border-radius: 50%; */
+  background-color: #FDCF78;
+  border: 2px solid black;
   cursor: pointer;
 }
 
@@ -176,7 +189,7 @@ aside a:hover {
 
 section {
   display: grid;
-  grid-template-columns: repeat(5, 250px);
+  grid-template-columns: repeat(5, 550px);
   gap: 30px 20px;
   margin-bottom: 50px;
   /* width: 65%;
@@ -186,15 +199,18 @@ section {
 section a {
   padding: 20px;
   border-radius: 20px;
-  background-color: rgb(240, 240, 240);
+  background-color: #EEC995;
   color: var(--text-color);
   text-decoration: none;
   transition: transform 1s ease;
+  border: 2px solid black;
 }
 
+/* EEC995 FDCF78 */
+
 section a:hover {
-  background-color: rgb(240, 240, 240);
-  border: 5px solid pink;
+  background-color: #FDCF78;
+  border: 3px solid black;
   scale: 1.1;
   transform: skew(-0.02turn, 7deg);
   z-index: 1;
@@ -205,6 +221,7 @@ section a img {
   width: 220px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid black;
 }
 
 section a:hover img {
